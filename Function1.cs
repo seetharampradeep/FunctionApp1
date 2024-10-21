@@ -32,7 +32,7 @@ namespace FunctionApp1
                 return new BadRequestObjectResult("Invalid page or pageSize.");
             }
             List<dynamic> result = dataAccessProvider.GetItems<dynamic>($"SELECT * FROM DMA.VW_SUITE_LEVEL_SQFT ORDER BY REGION, MASTER_SITE_CODE, SUITE offset 1 FETCH NEXT 10 ROWS ONLY;", null, false).ToList();
-            return new OkObjectResult(result);
+            return new OkObjectResult
         }
     }
 }
